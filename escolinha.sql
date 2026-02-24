@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Fev-2026 às 01:47
+-- Tempo de geração: 24-Fev-2026 às 02:09
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -32,6 +32,15 @@ CREATE TABLE `aluno` (
   `nome` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Extraindo dados da tabela `aluno`
+--
+
+INSERT INTO `aluno` (`idAluno`, `nome`) VALUES
+(1, 'Davy Joggers'),
+(2, 'Davy Jogger'),
+(3, 'Davy Jogge');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +53,16 @@ CREATE TABLE `alunokypc` (
   `idCurso` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Extraindo dados da tabela `alunokypc`
+--
+
+INSERT INTO `alunokypc` (`idRelacao`, `idAluno`, `idCurso`) VALUES
+(1, 3, 1),
+(2, 2, 1),
+(3, 1, 2),
+(4, 1, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -54,6 +73,15 @@ CREATE TABLE `kypc` (
   `idCurso` int(11) NOT NULL,
   `materia` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Extraindo dados da tabela `kypc`
+--
+
+INSERT INTO `kypc` (`idCurso`, `materia`) VALUES
+(1, 'ADM'),
+(2, 'TI'),
+(3, 'LETRAS');
 
 --
 -- Índices para tabelas despejadas
